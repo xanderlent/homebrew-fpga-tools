@@ -1,18 +1,15 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook.html
-#                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
- class ArachnePnr < Formula
-  desc ""
-  homepage ""
-  url "https://github.com/cseed/arachne-pnr"
-  sha256 "2a808186dfb920d6feae99b79a17dcfc53e26e912d610f2dfc85a1e98eabafac"
+class ArachnePnr < Formula
+  desc "Place and route tool for FPGAs"
+  homepage "https://github.com/cseed/arachne-pnr"
+  head "https://github.com/cseed/arachne-pnr.git"
   # TODO: What are the deps? Which are build-time?
-  depends_on "xanderlent/brew-fpga-tools/icestorm"
-   def install
+  depends_on "xanderlent/fpga-tools/icestorm"
+  def install
     # ENV.deparallelize  # if your formula fails when building in parallel
-    system "make", "install" # if this fails, try separate make/make install steps
+    # TODO: Since this compiles things from icestorm, how to gaurantee that updated first?
+    system "make", "PREFIX=#{prefix}", "ICEBOX=#{HOMEBREW_PREFIX}/share/icebox", "install"
   end
-   test do
+  test do
     # `test do` will create, run in and delete a temporary directory.
     #
     # This test will fail and we won't accept that! For Homebrew/homebrew-core
