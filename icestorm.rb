@@ -3,8 +3,8 @@ class Icestorm < Formula
   homepage "http://www.clifford.at/icestorm/"
   head "https://github.com/cliffordwolf/icestorm.git"
   # TODO: What are the deps? Which are build-time?
-  depends_on "python3" => :run # Most programs are py3 scripts?
-  depends_on "libftdi0" => :run # Used in iceprog?
+  depends_on "python3" # Most programs are py3 scripts?
+  depends_on "libftdi0" # Used in iceprog?
   depends_on "pkg-config" => :build # Speculative! TODO: Check if case!
   def install
     # TODO: How to change prefix
