@@ -8,6 +8,7 @@ class NextpnrIce40 < Formula
   # See mac info in the Readme!
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  # modern C++11 compiler, clang-format used for devel
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "python"
@@ -15,6 +16,7 @@ class NextpnrIce40 < Formula
   # "Latest git Yosys is required to synthesise the demo design"
   # Seemed to work fine with ice40 blinky using homebrew-core's yosys 0.8.
   # I think that statement predates yosys 0.8 but it has been 600+ commits to yosys master since then?
+  # According to https://github.com/SymbiFlow/prjtrellis, "(Yosys 0.8 is not sufficient for ECP5 development)" but this is ice40 so I guess we're good
   depends_on "xanderlent/fpga-tools/icestorm"
 
   def install
