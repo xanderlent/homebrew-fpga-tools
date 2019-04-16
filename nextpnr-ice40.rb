@@ -13,6 +13,8 @@ class NextpnrIce40 < Formula
   depends_on "python"
   depends_on "qt"
   # "Latest git Yosys is required to synthesise the demo design"
+  # Seemed to work fine with ice40 blinky using homebrew-core's yosys 0.8.
+  # I think that statement predates yosys 0.8 but it has been 600+ commits to yosys master since then?
   depends_on "xanderlent/fpga-tools/icestorm"
 
   def install
