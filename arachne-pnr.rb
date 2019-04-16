@@ -5,7 +5,8 @@ class ArachnePnr < Formula
 
   # TODO: What are the deps? Which are build-time?
   # See info here: http://www.clifford.at/icestorm/#install
-
+  # NOTE: That page says the following which may be hard to enforce w/ homebrew?
+  # "Always rebuild the PNR tools after updating your IceStorm installation."
   depends_on "xanderlent/fpga-tools/icestorm"
 
   def install
