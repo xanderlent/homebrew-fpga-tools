@@ -4,10 +4,12 @@ class Icestorm < Formula
   head "https://github.com/cliffordwolf/icestorm.git"
 
   # TODO: What are the deps? Which are build-time?
-  # See info here: http://www.clifford.at/icestorm/#install
-  depends_on "python3" # Most programs are py3 scripts?
-  depends_on "libftdi0" # Used in iceprog?
+  # See some info here: http://www.clifford.at/icestorm/#install
+  # On second thought that link doesn't seem to mention dependencies?
+  # IIRC I figured these out through trial and error?
   depends_on "pkg-config" => :build # Speculative! TODO: Check if case!
+  depends_on "libftdi0" # Used in iceprog?
+  depends_on "python" # Most programs are py3 scripts?
 
   def install
     system "make", "PREFIX=#{prefix}", "install"
