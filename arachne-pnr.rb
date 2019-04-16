@@ -1,7 +1,7 @@
 class ArachnePnr < Formula
   desc "Place and route tool for FPGAs"
-  homepage "https://github.com/cseed/arachne-pnr"
-  head "https://github.com/cseed/arachne-pnr.git"
+  homepage "https://github.com/YosysHQ/arachne-pnr"
+  head "https://github.com/YosysHQ/arachne-pnr.git"
   # TODO: What are the deps? Which are build-time?
   depends_on "xanderlent/fpga-tools/icestorm"
   def install
