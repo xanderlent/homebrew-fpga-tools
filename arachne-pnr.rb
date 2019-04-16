@@ -3,6 +3,7 @@ class ArachnePnr < Formula
   homepage "https://github.com/YosysHQ/arachne-pnr"
   head "https://github.com/YosysHQ/arachne-pnr.git"
   # TODO: What are the deps? Which are build-time?
+  # See info here: http://www.clifford.at/icestorm/#install
   depends_on "xanderlent/fpga-tools/icestorm"
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
