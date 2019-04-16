@@ -2,14 +2,20 @@ class ArachnePnr < Formula
   desc "Place and route tool for FPGAs"
   homepage "https://github.com/YosysHQ/arachne-pnr"
   head "https://github.com/YosysHQ/arachne-pnr.git"
+
   # TODO: What are the deps? Which are build-time?
   # See info here: http://www.clifford.at/icestorm/#install
+
   depends_on "xanderlent/fpga-tools/icestorm"
+
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # TODO: Since this compiles things from icestorm, how to gaurantee that updated first?
+    # If I understand http://www.clifford.at/icestorm/#install correctly, the
+    # PREFIX and ICEBOX are assumed to be based on /usr/local, but we want to
+    # be more flexible than that. :) (Though it should be noted that the code
+    # assumes ICEBOX=$(PREFIX)/share/icebox so, shrugs.)
     system "make", "PREFIX=#{prefix}", "ICEBOX=#{HOMEBREW_PREFIX}/share/icebox", "install"
   end
+
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
