@@ -5,13 +5,17 @@ class Icestorm < Formula
 
   # TODO: What are the deps? Which are build-time?
   # See some info here: http://www.clifford.at/icestorm/#install
+  # See Mac info I recall using when creating these formulae here:
+  # http://www.clifford.at/icestorm/notes_osx.html
   # On second thought that link doesn't seem to mention dependencies?
   # IIRC I figured these out through trial and error?
-  depends_on "pkg-config" => :build # Speculative! TODO: Check if case!
+  depends_on "pkg-config" => :build # Speculative! TODO: Check if only needed on build!
   depends_on "libftdi0" # Used in iceprog?
   depends_on "python" # Most programs are py3 scripts?
 
   def install
+    # TODO: Per the mac info page above, should probably set LDLIBS/CFLAGS
+    # so that you can install dependencies outside of /usr/local
     system "make", "PREFIX=#{prefix}", "install"
   end
 
