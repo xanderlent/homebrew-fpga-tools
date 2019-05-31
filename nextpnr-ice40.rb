@@ -22,6 +22,7 @@ class NextpnrIce40 < Formula
     # "Always rebuild the PNR tools after updating your IceStorm installation."
     system "cmake", "-DARCH=ice40", "-DICEBOX_ROOT=#{HOMEBREW_PREFIX}/share/icebox", ".", *std_cmake_args
     # Interesting! Homebrew automatically sets the PREFIX for install!
+    # TODO: Should I add special Homebrew args below? Will it auto-paralellize the make?
     system "make", "install" # if this fails, try separate make/make install steps
   end
 
