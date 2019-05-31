@@ -1,6 +1,7 @@
 class Icestorm < Formula
   desc "Project IceStorm - Lattice iCE40 FPGA tools"
   homepage "http://www.clifford.at/icestorm/"
+  # The SymbiFlow page here says that Project IceStorm will become part of SymbiFlow in the future: https://symbiflow.github.io/#icestorm
   head "https://github.com/cliffordwolf/icestorm.git"
 
   # TODO: What are the deps? Which are build-time?
