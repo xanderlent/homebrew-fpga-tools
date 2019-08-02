@@ -1,13 +1,13 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 class NextpnrIce40 < Formula
-  desc "nextpnr portable FPGA place and route tool"
+  desc "nextpnr portable FPGA place and route tool (Lattice iCE40)"
   homepage "https://github.com/YosysHQ/nextpnr"
   head "https://github.com/YosysHQ/nextpnr.git"
   # TODO: Which are build and which are runtime?
   # See mac info in the Readme!
   depends_on "cmake" => :build
-  depends_on "eigen" => :build
+  depends_on "eigen" => :build # TODO: is this really build-time-only?
   # modern C++11 compiler, clang-format used for devel
   depends_on "boost"
   depends_on "boost-python3"

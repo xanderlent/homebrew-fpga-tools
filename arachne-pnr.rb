@@ -1,7 +1,8 @@
 class ArachnePnr < Formula
-  desc "Place and route tool for FPGAs"
+  desc "Place and route tool for FPGAs (Deprecated, use nextpnr instead!)"
   homepage "https://github.com/YosysHQ/arachne-pnr"
   head "https://github.com/YosysHQ/arachne-pnr.git"
+  # N.B. As of late July 2019, arachne-pnr is no longer maintained. Replaced by nextpnr!
 
   # TODO: What are the deps? Which are build-time?
   # See info here: http://www.clifford.at/icestorm/#install
