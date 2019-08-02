@@ -4,7 +4,7 @@
 class Libtrellis < Formula
   desc "Library for working with the Lattice ECP5 bit-stream format."
   homepage "https://symbiflow.github.io/#trellis"
-  head "https://github.com/SymbiFlow/prjtrellis"
+  head "https://github.com/SymbiFlow/prjtrellis.git" # Needs to be a recursive clone
   depends_on "cmake" => :build
   # modern C++14 compiler & git for devel
   depends_on "boost"
@@ -14,7 +14,7 @@ class Libtrellis < Formula
 
   def install
     cd "libtrellis"
-    # -DCMAKE_INSTALL_PREFIX is IIRC part of the standard cmake args? yep
+    # -DCMAKE_INSTALL_PREFIX is IIRC part of the brew standard cmake args? yep
     system "cmake", ".", *std_cmake_args
     system "make", "install" # if this fails, try separate make/make install steps
   end
