@@ -1,5 +1,3 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
 class NextpnrIce40 < Formula
   desc "nextpnr portable FPGA place and route tool (Lattice iCE40)"
   homepage "https://github.com/YosysHQ/nextpnr"
@@ -22,7 +20,8 @@ class NextpnrIce40 < Formula
   def install
     # TODO: HOMEBREW_PREFIX or the Cellar location of icebox? Since you should
     # "Always rebuild the PNR tools after updating your IceStorm installation."
-    system "cmake", "-DARCH=ice40", "-DICEBOX_ROOT=#{HOMEBREW_PREFIX}/share/icebox", ".", *std_cmake_args
+    # Note that -DCMAKE_INSTALL_PREFIX is part of the brew standard cmake args
+    system "cmake", "-DARCH=ice40", "-DICEBOX_ROOT=#{share}/icebox", ".", *std_cmake_args
     # Interesting! Homebrew automatically sets the PREFIX for install!
     # TODO: Should I add special Homebrew args below? Will it auto-paralellize the make?
     system "make", "install" # if this fails, try separate make/make install steps

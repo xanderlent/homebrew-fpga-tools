@@ -1,6 +1,3 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Libtrellis < Formula
   desc "Library for working with the Lattice ECP5 bit-stream format."
   homepage "https://symbiflow.github.io/#trellis"
@@ -8,13 +5,13 @@ class Libtrellis < Formula
   depends_on "cmake" => :build
   # modern C++14 compiler & git for devel
   depends_on "boost"
-  depends_on "python" # possibly only for devel TODO: check
   depends_on "boost-python"
   depends_on "openocd" # Technically optional
+  depends_on "python" # possibly only for devel TODO: check
 
   def install
     cd "libtrellis"
-    # -DCMAKE_INSTALL_PREFIX is IIRC part of the brew standard cmake args? yep
+    # Note that -DCMAKE_INSTALL_PREFIX is part of the brew standard cmake args
     system "cmake", ".", *std_cmake_args
     system "make", "install" # if this fails, try separate make/make install steps
   end
